@@ -1,3 +1,54 @@
 @import "_mixins.sass";
-@import "_reset.scss";
+$bigscreen-size: 1400px;
 
+* {
+  @include box-sizing(border-box);
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+
+
+html,body {
+  min-height:100%;
+  width:100%;
+}
+
+
+
+$quote-size: 3em;
+$quote-padding: $quote-size/2;
+
+#quote {
+  padding: $quote-padding $quote-padding 0 $quote-padding;
+  vertical-align: middle;
+  text-align: center;
+  font-style: italic;
+  font-size: $quote-size;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: $bigscreen-size) {
+  #main {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  #quote {
+    display: table-cell;
+    padding: 0;
+  }
+}
