@@ -1,10 +1,8 @@
+require 'yaml'
+require 'hashie'
+
+QUOTES = YAML.load_file('quotes.yml').map { |e| Hashie::Mash.new(e) }
+
 def quote
-  [
-    {
-      copy: 'Hello Adam and Matt!'
-    },
-    {
-      copy: 'Hello Nan! Oh no, you\'re not here!'
-    }
-  ].sample
+  QUOTES.sample
 end
