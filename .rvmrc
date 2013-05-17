@@ -1,1 +1,1 @@
-rvm use 1.9.3@statement --create
+rvm use 1.9.3@blockquoted --create
