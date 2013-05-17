@@ -28,13 +28,3 @@ blockquote {
     content: '”';
     bottom: -0.76em;
     right: -0.2em; }
-
-@media only screen and (min-width: 1400px) {
-  #main {
-    display: table;
-    height: 100%;
-    width: 100%; }
-
-  blockquote {
-    display: table-cell;
-    padding: 0; } }
