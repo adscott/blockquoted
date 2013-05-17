@@ -1,0 +1,122 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,600,800);
+* {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+html, body {
+  min-height: 100%;
+  width: 100%; }
+
+ol, ul {
+  list-style: none;
+  list-style-position: inside; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 14px; }
+
+p {
+  font-size: 14px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open sans" Arial, Verdana, sans-serif; }
+
+h3, h4, h5, h6 {
+  font-weight: bold; }
+
+html {
+  font-size: 14px;
+  color: #333333; }
+
+html {
+  font-family: "Open sans" Arial, Verdana, sans-serif; }
+
+strong {
+  font-weight: bold; }
+
+body {
+  background: #f4f4f4; }
+
+a {
+  color: #333333;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s; }
+  a:hover {
+    color: #666666;
+    text-decoration: underline; }
+
+#main-header, #main, #main-footer {
+  max-width: 960px;
+  margin: 0 auto; }
+
+section {
+  margin-bottom: 1.5em; }
+
+h1, h2, h3, h4, h5, h6, ol, ul, p, article, section, aside, figure {
+  margin-bottom: 0.5em; }
+
+img {
+  max-width: 100%; }
+
+figcaption {
+  margin-top: 0.5em;
+  text-align: center; }
+
+@media only screen and (max-width: 1024px) {
+  * -webkit-text-size-adjust: none; }
+#main-nav li {
+  display: inline-block; }
+
+.placeholder-video, .video-wrapper {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 380px;
+  width: 80%;
+  background-color: #000;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  cursor: pointer; }
+  .placeholder-video:before, .video-wrapper:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    border-left: 80px solid #999999;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 0px solid transparent;
+    top: 50%;
+    margin-top: -40px;
+    left: 50%;
+    margin-left: -40px; }
+
+.video-wrapper {
+  position: relative;
+  text-align: center; }
+
+iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 1; }
