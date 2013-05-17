@@ -24,3 +24,7 @@ $`haml-server site`
 ## Contribute
 
 Add quotes to `helpers.rb` and make a pull request.
+
+## Credits
+
+Thanks for @matthewcopeland for making this something people might want to look at.
