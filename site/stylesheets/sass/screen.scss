@@ -1,44 +1,62 @@
 @import "_mixins.sass";
+@import "_solarized.scss";
+
+// media query sizes
 $bigscreen-size: 1400px;
 
-* {
-  @include box-sizing(border-box);
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
+
+// $bghlights: $base2;
+
+html {
+  font-size: 14px;
+  background-color: $bgcolor;
+  color: $body-copy-color;
+}
+
+
+#main {
+  text-align: center;
 }
 
 
 
-html,body {
-  min-height:100%;
-  width:100%;
-}
-
-
-
-$quote-size: 3em;
-$quote-padding: $quote-size/2;
-
-#quote {
-  padding: $quote-padding $quote-padding 0 $quote-padding;
+blockquote {
+  $quote-size: 3em;
+  $quote-padding: $quote-size/2;
+  position: relative;
+  display: inline-block;
   vertical-align: middle;
+  padding: 0 $quote-padding 0 $quote-padding;
   text-align: center;
   font-style: italic;
   font-size: $quote-size;
+  text-shadow: 0 1px 0 white;
+
+
+  &:before, &:after {
+    position: absolute;
+    color: $comments;
+    font-size: $quote-size*1.6;
+  }
+
+
+  &:before {
+    content: '“';
+    top: -0.3em;
+    left: -0.28em;
+  }
+
+  &:after {
+    content: '”';
+    bottom: -0.76em;
+    right: -0.2em;
+  }
 }
 
 
 
 
-
-
-
-
-
-
-
-
+// media queries batch
 @media only screen and (min-width: $bigscreen-size) {
   #main {
     display: table;
@@ -47,7 +65,7 @@ $quote-padding: $quote-size/2;
   }
 
 
-  #quote {
+  blockquote {
     display: table-cell;
     padding: 0;
   }
