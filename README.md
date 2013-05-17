@@ -1,5 +1,7 @@
-statement
+blockquoted
 ===========================
+
+Source for http://blockquoted.com - a repository of software development one liner quotes of guidance.
 
 ## Setup
 
