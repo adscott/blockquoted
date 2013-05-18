@@ -1,12 +1,58 @@
 -
-  copy: "Captain Planet, he's a hero! Gonna take polution down to zero!"
+  copy: Global variables are evil.
 -
-  copy: They mostly come at night. Mostly.
-  author: Newt
+  copy: Unit tests don't talk to external services.
 -
-  copy: Nan Chu is Best Chu
-  url: http://blog.nanchu.me/
+  copy: Code duplication is a bad thing.
 -
-  copy: I enjoy opinions.
-  author: Matthew Copeland
-  url: http://matthewcopeland.me/
+  copy: "If you didn't write it, mock it."
+-
+  copy: Prefer composition over inheritance.
+-
+  copy: "If you can't name it, rethink it."
+-
+  copy: Developer efficiency trumps machine efficiency.
+-
+  copy: Imagine the next person to maintain this code has anger management issues and knows where you live.
+-
+  copy: Code is read more than it is written.
+-
+  copy: Simplicity does not occur by magic. First there must be complexity.
+-
+  copy: Leave it in a (slightly) better state.
+-
+  copy: "If it's easy to use, it's easy to write a test."
+-
+  copy: This method keeps calling methods on the that object. Let's put this method on that object.
+-
+  copy: Don't check it manually. Run the tests. What? You're going to check 97 variations by hand?
+-
+  copy: One acceptance test. A few integration tests. A bunch of unit tests.
+-
+  copy: Don't comment out the code. Delete it. We can always get it back from version control.
+-
+  copy: "Either fix the build now, or we'll revert your code and you can fix it later."
+-
+  copy: "If the implementation is hard to explain, it's a bad idea."
+-
+  copy: Just because you can write a lot of functionality in a single line doesn't mean that you should
+-
+  copy: "Design and development are human activities, forget that and all is lost."
+-
+  copy: It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.
+  author: Perlis
+-
+  copy: "There are two ways to write code: write code so simple there are obviously no bugs in it, or write code so complex that there are no obvious bugs in it."
+  author: Hoare
+-
+  copy: "Any sufficiently complicated [...] program contains an ad hoc, informally-specified, bug-ridden, slow implementation of half of Common Lisp."
+  author: Greenspun
+-
+  copy: "XML is like violence: if it doesn’t solve your problem, you aren’t using enough of it."
+-
+  copy: The best code is the one you don't have to write.
+-
+  copy: "Keep is DRY, shy, and tell the other guy."
+  url: http://media.pragprog.com/articles/may_04_oo1.pdf
+-
+  copy: Premature optimization is the root of all evil.
