@@ -3,6 +3,6 @@ require 'hashie'
 
 QUOTES = YAML.load_file('quotes.yml').map { |e| Hashie::Mash.new(e) }
 
-def quote
+def fetch_quote
   QUOTES.sample
 end

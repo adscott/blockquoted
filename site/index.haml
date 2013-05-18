@@ -1,1 +1,14 @@
-%blockquote= quote.copy
+- quote = fetch_quote
+- has_author = quote.respond_to?(:author)
+- has_url = quote.respond_to?(:url)
+
+%blockquote
+  %p= quote.copy
+  - if has_author || has_url
+    %footer
+      - if has_author
+        %p= quote.author
+      - if has_url
+        %p
+          %a{:href => quote.url}= quote.url
+
