@@ -6,7 +6,7 @@ describe 'index.haml' do
 
   let(:copy) { 'Hello World!' }
   let(:quote) { { :copy => copy } }
-  subject { Haml::Engine.new(File.read('site/index.haml')).render(Hashie::Mash.new({ :fetch_quote => quote })) }
+  subject { Haml::Engine.new(File.read('site/index.haml')).render(Hashie::Mash.new({ :fetch_quote => Quote.new(quote) })) }
 
   it { should have_tag('blockquote', :text => copy) { without_tag 'footer' } }
 
