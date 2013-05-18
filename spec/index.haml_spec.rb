@@ -5,21 +5,25 @@ require 'hashie'
 describe 'index.haml' do
 
   let(:copy) { 'Hello World!' }
-  let(:quote) { { :copy => copy } }
-  subject { Haml::Engine.new(File.read('site/index.haml')).render(Hashie::Mash.new({ :fetch_quote => Quote.new(quote) })) }
+  let(:author) { 'Brian Kernighan' }
+  let(:url) { 'https://en.wikipedia.org/wiki/Hello_world_program' }
+  let(:has_author) { false }
+  let(:has_link) { false }
+  let(:quote) { { :copy => copy, :author => author, :has_author? => has_author, :url => url, :has_link? => has_link } }
+  subject { Haml::Engine.new(File.read('site/index.haml')).render(Hashie::Mash.new({ :fetch_quote => quote })) }
 
-  it { should have_tag('blockquote', :text => copy) { without_tag 'footer' } }
+  describe 'when there is just copy' do
+    it { should have_tag('blockquote', :text => copy) { without_tag 'footer' } }
+  end
 
   describe 'when there is an author' do
-    let(:author) { 'Brian Kernighan' }
-    let(:quote) { { :copy => copy, :author => author } }
+    let(:has_author) { true }
 
     it { should have_tag('blockquote') { with_tag('footer', :text => author) } }
   end
 
   describe 'when there is a url' do
-    let(:url) { 'https://en.wikipedia.org/wiki/Hello_world_program' }
-    let(:quote) { { :copy => copy, :url => url } }
+    let(:has_link) { true }
 
     it { should have_tag('blockquote') { with_tag 'footer' } }
     it { should have_tag('footer') { with_tag('a', :text => url, :with => { :href => url }) } }
