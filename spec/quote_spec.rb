@@ -28,10 +28,20 @@ describe Quote do
     its(:link_text) { should == 'en.wikipedia.org/.../William_Shakespeare?some_l...' }
   end
 
-  describe 'when the url is already short' do
-    let(:attrs) { { :url => 'http://www.google.com/' } }
+  describe 'url shortening' do
+    let(:attrs) { { :url => url } }
 
-    its(:link_text) { should == 'www.google.com/' }
+    describe 'when the url is already short' do
+      let(:url) { 'http://www.google.com/foo' }
+
+      its(:link_text) { should == 'www.google.com/foo' }
+    end
+
+    describe 'when the url is just the domain' do
+      let(:url) { 'http://www.google.com/' }
+
+      its(:link_text) { should == 'www.google.com' }
+    end
   end
 
 end
