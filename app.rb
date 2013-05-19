@@ -20,5 +20,6 @@ end
 
 get '/:quote_hash_string' do |quote_hash_string|
   quote = QUOTES.find { |quote| quote_hash_string == quote.hash_string }
-  haml :index, :locals => { :quote => quote } 
+  pass if quote.nil?
+  haml :index, :locals => { :quote => quote }
 end
