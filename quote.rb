@@ -4,16 +4,16 @@ class Quote
 
   def initialize(attrs)
     @copy = attrs[:copy] || ''
-    @author = attrs[:author]
-    @url = attrs[:url]
+    @author = attrs[:author] || ''
+    @url = attrs[:url] || ''
   end
 
   def has_author?
-    !author.nil?
+    author.length > 0
   end
 
   def has_link?
-    !url.nil?
+    url.length > 0
   end
 
   def link_text
@@ -25,6 +25,10 @@ class Quote
     fragment = uri.fragment.nil? ? '' : "##{uri.fragment}"
     long_url = path == '/' && query == '' && fragment == '' ? host : "#{host}#{path}#{query}#{fragment}"
     long_url.length > 50 ? "#{long_url[0..46]}..." : long_url
+  end
+
+  def hash_string
+    Digest::SHA1.hexdigest(copy + author + url).hex.to_s(36)[0..7]
   end
 
 end

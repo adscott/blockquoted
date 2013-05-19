@@ -1,1 +1,0 @@
-web: bundle exec haml-server -p $PORT site

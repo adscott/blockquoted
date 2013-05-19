@@ -15,17 +15,21 @@ $`bundle install`
 
 Start sass:
 
-$`sass --watch site/stylesheets/sass/screen.scss:site/stylesheets/css/screen.css`
+$`bundle exec sass --watch site/stylesheets/sass/screen.scss:site/stylesheets/css/screen.css`
 
 
 Start haml-server(sinatra):
 
-$`haml-server site`
+$`bundle exec shotgun`
 
 
 ## Contribute
 
 Add quotes to `helpers.rb` and make a pull request.
+
+Add tests for any new functionality. Tests can be run using:
+
+$`bundle exec rspec`
 
 ## Credits
 

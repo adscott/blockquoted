@@ -1,12 +1,11 @@
-- quote = fetch_quote
-
 %blockquote
   %p#quote= quote.copy
-  - if quote.has_author? || quote.has_link?
-    %footer
-      - if quote.has_author?
-        %p#citation
-          %span= quote.author
-      - if quote.has_link?
-        %p
-          %a{:href => quote.url}= quote.link_text
+  %footer
+    - if quote.has_author?
+      %p#citation
+        %span= quote.author
+    - if quote.has_link?
+      %p
+        %a{:href => quote.url}= quote.link_text
+    %p
+      %a.permalink{:href => "/#{quote.hash_string}"}= 'permalink'

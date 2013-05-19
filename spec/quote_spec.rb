@@ -44,4 +44,10 @@ describe Quote do
     end
   end
 
+  describe 'hashing' do
+    let(:attrs) { { :copy => 'a', :url => 'http://b.com/', :author => 'c' } }
+
+    its(:hash_string) { should == 'r9dgu7aa' }
+  end
+
 end
