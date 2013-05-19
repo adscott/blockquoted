@@ -7,5 +7,5 @@
     - if quote.has_link?
       %p
         %a{:href => quote.url}= quote.link_text
-    %p
-      %a.permalink{:href => "/#{quote.hash_string}"}= 'permalink'
+    %p#permalink
+      %a{:href => "/#{quote.hash_string}"}= 'link to this quote'

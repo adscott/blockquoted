@@ -35,6 +35,12 @@ blockquote {
   padding: 0 1em 0 1em;
   text-shadow: 0 1px 0 white; }
 
+#permalink {
+  display: none; }
+
+blockquote:hover #permalink {
+  display: block; }
+
 #quote {
   font-style: italic;
   font-size: 47px;
