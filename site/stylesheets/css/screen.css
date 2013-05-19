@@ -33,7 +33,8 @@ blockquote {
   display: inline-block;
   vertical-align: middle;
   padding: 0 1em 0 1em;
-  text-shadow: 0 1px 0 white; }
+  text-shadow: 0 1px 0 white;
+  max-width: 80em; }
 
 #permalink {
   display: none; }
