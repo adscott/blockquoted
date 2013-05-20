@@ -24,17 +24,22 @@ html {
 body {
   border-top: 0.5em solid #eee8d5; }
 
+#forkme {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 #main {
   text-align: center;
   padding-top: 8em;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 80em; }
 
 blockquote {
   display: inline-block;
   vertical-align: middle;
   padding: 0 1em 0 1em;
-  text-shadow: 0 1px 0 white;
-  max-width: 80em; }
+  text-shadow: 0 1px 0 white; }
 
 #permalink {
   display: none; }
@@ -47,12 +52,15 @@ blockquote:hover #permalink {
   font-size: 47px;
   line-height: 58px;
   text-align: right; }
+  #quote:before, #quote:after {
+    color: #93a1a1;
+    font-size: 1.2em;
+    display: inline-block; }
   #quote:before {
     content: '“';
-    color: #93a1a1;
-    display: inline-block;
-    margin-right: .25em;
-    font-size: 1.2em; }
+    margin-right: .25em; }
+  #quote:after {
+    content: '”'; }
 
 footer {
   text-align: right;

@@ -25,11 +25,21 @@ body {
 
 
 
+#forkme {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
 #main {
   text-align: center;
   padding-top: 8em;
   margin: 0 auto;
+  max-width: 80em;
 }
+
 
 
 blockquote {
@@ -37,16 +47,21 @@ blockquote {
   vertical-align: middle;
   padding: 0 $gutter-horizontal 0 $gutter-horizontal;
   text-shadow: 0 1px 0 white;
-  max-width: 80em;
 }
+
+
 
 #permalink {
   display: none;
 }
 
+
+
 blockquote:hover #permalink {
   display: block;
 }
+
+
 
 #quote {
   font-style: italic;
@@ -54,12 +69,19 @@ blockquote:hover #permalink {
   line-height: 58px;
   text-align: right;
 
+  &:before, &:after {
+    color: $comments;
+    font-size: 1.2em;
+    display: inline-block;
+  }
+
   &:before {
     content: '“';
-    color: $comments;
-    display: inline-block;
     margin-right: .25em;
-    font-size: 1.2em;
+  }
+
+  &:after {
+    content: '”';
   }
 }
 
