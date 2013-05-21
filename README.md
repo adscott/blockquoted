@@ -25,7 +25,7 @@ $`bundle exec shotgun`
 
 ## Contribute
 
-Add quotes to `helpers.rb` and make a pull request.
+Add quotes to `quotes.yml` and make a pull request.
 
 Add tests for any new functionality. Tests can be run using:
 
