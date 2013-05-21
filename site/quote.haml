@@ -6,8 +6,14 @@
     %link{rel: 'icon', href: '/favicon.png'}
     %link{rel:'stylesheet', type:'text/css', href:'/stylesheets/css/screen.css'}
   %body
+    %section#controls
+      %ul
+        %li>
+          %a{href:'https://github.com/adscott/blockquoted'} Contribute
+        %li>
+          %a#another{href: '#'}
+            Random Quote
     %section#main
-    %script= "var slug = '#{slug}';"
     %script{src: '/javascript/jquery-2.0.0.min.js'}
     %script{src: '/javascript/underscore.js'}
     %script{src: '/javascript/underscore.string.js'}
@@ -25,11 +31,3 @@
       \            %a{href: quote.citation_url}= quote.citation_text
       \        - else {
       \          %em= quote.citation_text
-      \    %ul.footer-links
-      \      %li>
-      \        %a{href: '/' + quote.hash_string} Link to this quote
-      \      %li>
-      \        %a{href:'https://github.com/adscott/blockquoted'} Contribute
-      \      %li>
-      \        %a{href:'/'} Show me another
-

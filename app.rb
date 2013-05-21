@@ -18,7 +18,7 @@ set :views, template_dir
 set :json_encoder, JSON
 
 get '/' do
-  haml :index, :locals => { :slug => 'random' }
+  haml :quote
 end
 
 get '/random' do
@@ -32,7 +32,7 @@ end
 get '/:quote_hash_string' do |quote_hash_string|
   quote = find_quote(quote_hash_string)
   pass if quote.nil?
-  haml :index, :locals => { :slug => "/quote/#{quote_hash_string}" }
+  haml :quote
 end
 
 def find_quote(hash_string)

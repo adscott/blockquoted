@@ -4,13 +4,14 @@
 
 
 
-// gutters
+
 $gutter-horizontal: 1em;
 $gutter-vertical: 10px;
 
 
 
 html {
+  font-family: monospace;
   font-size: 16px;
   line-height: 24px;
   background-color: $bgcolor;
@@ -34,17 +35,23 @@ a {
   }
 }
 
+#controls li {
+  display: inline-block;
+  padding: 0 $gutter-horizontal/2;
+  margin: $gutter-vertical 0 0;
+  text-transform: lowercase;
 
+  a {
+    color: lighten($comments, 15);
+  }
 
-#forkme {
-  position: absolute;
-  top: 0;
-  left: 0;
+  &:first-of-type {
+    border-right: 1px $bghlights solid;
+  }
 }
 
 
-
-#main, #main-footer {
+#main {
   padding-top: 8em;
   margin: 0 auto;
   max-width: 80em;
@@ -62,7 +69,6 @@ blockquote {
 
 
 #quote {
-  font-style: italic;
   font-size: 47px;
   line-height: 58px;
 
@@ -74,7 +80,6 @@ blockquote {
 
   &:before {
     content: '“';
-    margin-right: .25em;
   }
 
   &:after {
@@ -94,24 +99,5 @@ footer {
   color: $comments;
   font-size: 14px;
   line-height: 22px;
-  font-family: arial, sans-serif;
-
-  .footer-links {
-    margin-top: $gutter-vertical*2;
-    text-align: center;
-    li {
-      display: inline-block;
-      border-top: 1px solid $bghlights;
-      padding: $gutter-vertical 0;
-      &:not(:last-of-type) a { border-right: 1px solid $bghlights; }
-    }
-
-    a {
-        display: block;
-        text-transform: lowercase;
-        padding: 0 $gutter-horizontal/2;
-      }
-  }
-
 }
 

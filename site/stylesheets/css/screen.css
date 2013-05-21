@@ -16,6 +16,7 @@ html, body {
   overflow-x: hidden; }
 
 html {
+  font-family: monospace;
   font-size: 16px;
   line-height: 24px;
   background-color: #fdf6e3;
@@ -31,12 +32,17 @@ a {
   a:hover {
     text-decoration: underline; }
 
-#forkme {
-  position: absolute;
-  top: 0;
-  left: 0; }
+#controls li {
+  display: inline-block;
+  padding: 0 0.5em;
+  margin: 10px 0 0;
+  text-transform: lowercase; }
+  #controls li a {
+    color: #bcc5c5; }
+  #controls li:first-of-type {
+    border-right: 1px #eee8d5 solid; }
 
-#main, #main-footer {
+#main {
   padding-top: 8em;
   margin: 0 auto;
   max-width: 80em; }
@@ -48,7 +54,6 @@ blockquote {
   text-shadow: 0 1px 0 white; }
 
 #quote {
-  font-style: italic;
   font-size: 47px;
   line-height: 58px; }
   #quote:before, #quote:after {
@@ -56,8 +61,7 @@ blockquote {
     font-size: 1.2em;
     display: inline-block; }
   #quote:before {
-    content: '“';
-    margin-right: .25em; }
+    content: '“'; }
   #quote:after {
     content: '”'; }
 
@@ -67,18 +71,4 @@ blockquote {
 footer {
   color: #93a1a1;
   font-size: 14px;
-  line-height: 22px;
-  font-family: arial, sans-serif; }
-  footer .footer-links {
-    margin-top: 20px;
-    text-align: center; }
-    footer .footer-links li {
-      display: inline-block;
-      border-top: 1px solid #eee8d5;
-      padding: 10px 0; }
-      footer .footer-links li:not(:last-of-type) a {
-        border-right: 1px solid #eee8d5; }
-    footer .footer-links a {
-      display: block;
-      text-transform: lowercase;
-      padding: 0 0.5em; }
+  line-height: 22px; }
