@@ -3,9 +3,15 @@
   %footer
     - if quote.has_author?
       %p#citation
-        %span= quote.author
+        %span
+          %em #{quote.author}
     - if quote.has_link?
       %p
         %a{:href => quote.url}= quote.link_text
-    %p#permalink
-      %a{:href => "/#{quote.hash_string}"}= 'link to this quote'
+    %ul.footer-links
+      %li>
+        %a{:href => "/#{quote.hash_string}"}= 'Link to this quote'
+      %li>
+        %a{href:"https://github.com/adscott/blockquoted"} Contribute
+      %li>
+        %a{href:"https://github.com/adscott/blockquoted"} Show me another

@@ -22,15 +22,21 @@ html {
   color: #657b83; }
 
 body {
-  border-top: 0.5em solid #eee8d5; }
+  border-top: 0.5em solid #eee8d5;
+  text-align: center; }
+
+a {
+  color: #93a1a1;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
 
 #forkme {
   position: absolute;
   top: 0;
   left: 0; }
 
-#main {
-  text-align: center;
+#main, #main-footer {
   padding-top: 8em;
   margin: 0 auto;
   max-width: 80em; }
@@ -41,17 +47,10 @@ blockquote {
   padding: 0 1em 0 1em;
   text-shadow: 0 1px 0 white; }
 
-#permalink {
-  display: none; }
-
-blockquote:hover #permalink {
-  display: block; }
-
 #quote {
   font-style: italic;
   font-size: 47px;
-  line-height: 58px;
-  text-align: right; }
+  line-height: 58px; }
   #quote:before, #quote:after {
     color: #93a1a1;
     font-size: 1.2em;
@@ -62,15 +61,24 @@ blockquote:hover #permalink {
   #quote:after {
     content: '”'; }
 
+#citation:before {
+  content: "-"; }
+
 footer {
-  text-align: right;
   color: #93a1a1;
   font-size: 14px;
   line-height: 22px;
   font-family: arial, sans-serif; }
-
-a {
-  color: #93a1a1;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  footer .footer-links {
+    margin-top: 20px;
+    text-align: center; }
+    footer .footer-links li {
+      display: inline-block;
+      border-top: 1px solid #eee8d5;
+      padding: 10px 0; }
+      footer .footer-links li:not(:last-of-type) a {
+        border-right: 1px solid #eee8d5; }
+    footer .footer-links a {
+      display: block;
+      text-transform: lowercase;
+      padding: 0 0.5em; }

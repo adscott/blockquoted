@@ -21,6 +21,17 @@ html {
 
 body {
   border-top: .5em solid $bghlights;
+  text-align: center;
+}
+
+
+
+a {
+  color: $comments;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -33,8 +44,7 @@ body {
 
 
 
-#main {
-  text-align: center;
+#main, #main-footer {
   padding-top: 8em;
   margin: 0 auto;
   max-width: 80em;
@@ -51,23 +61,10 @@ blockquote {
 
 
 
-#permalink {
-  display: none;
-}
-
-
-
-blockquote:hover #permalink {
-  display: block;
-}
-
-
-
 #quote {
   font-style: italic;
   font-size: 47px;
   line-height: 58px;
-  text-align: right;
 
   &:before, &:after {
     color: $comments;
@@ -87,21 +84,34 @@ blockquote:hover #permalink {
 
 
 
-footer {
-  text-align: right;
-  color: $comments;
-  font-size: 14px;
-  line-height: 22px;
-  font-family: arial, sans-serif;
+#citation:before {
+  content: "-";
 }
 
 
 
-a {
+footer {
   color: $comments;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: arial, sans-serif;
+
+  .footer-links {
+    margin-top: $gutter-vertical*2;
+    text-align: center;
+    li {
+      display: inline-block;
+      border-top: 1px solid $bghlights;
+      padding: $gutter-vertical 0;
+      &:not(:last-of-type) a { border-right: 1px solid $bghlights; }
+    }
+
+    a {
+        display: block;
+        text-transform: lowercase;
+        padding: 0 $gutter-horizontal/2;
+      }
   }
+
 }
 
