@@ -1,10 +1,9 @@
 class Quote
 
-  attr_reader :copy, :author, :citation_url, :citation_text
+  attr_reader :copy, :citation_url, :citation_text
 
   def initialize(attrs)
     @copy = attrs[:copy] || ''
-    @author = attrs[:author] || ''
     @citation_url = attrs[:citation_url] || ''
     @citation_text = attrs[:citation_text] || generate_citation_text
   end
@@ -19,6 +18,10 @@ class Quote
 
   def hash_string
     Digest::SHA1.hexdigest(copy + citation_text + citation_url).hex.to_s(36)[0..7]
+  end
+
+  def to_json(*args)
+    { :copy => copy, :citation_url => citation_url, :citation_text => citation_text, :hash_string => hash_string }.to_json(*args)
   end
 
   private

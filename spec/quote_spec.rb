@@ -18,12 +18,17 @@ describe Quote do
   end
 
   describe 'when it has all of its attributes' do
-    let(:attrs) { { :copy => 'some copy', :citation_text => 'William S.', :citation_url => 'http://en.wikipedia.org/wiki/William_Shakespeare?some_long_part=of_the_query_string' } }
+    let(:attrs) { { :copy => 'some copy', :citation_text => 'William S.', :citation_url => 'http://en.wikipedia.org/wiki/William_Shakespeare' } }
 
     it { should have_citation }
     its(:copy) { should == 'some copy' }
-    its(:citation_url) { should == 'http://en.wikipedia.org/wiki/William_Shakespeare?some_long_part=of_the_query_string' }
+    its(:citation_url) { should == 'http://en.wikipedia.org/wiki/William_Shakespeare' }
     its(:citation_text) { should == 'William S.' }
+
+    describe 'when serializing to json' do
+      subject { JSON(Quote.new(attrs)) }
+      it { should == '{"copy":"some copy","citation_url":"http://en.wikipedia.org/wiki/William_Shakespeare","citation_text":"William S.","hash_string":"gailvhct"}' }
+    end
   end
 
   describe 'when it just has citation text' do

@@ -1,5 +1,6 @@
 require './app'
 require 'rspec'
+require 'json'
 require 'rack/test'
 
 set :environment, :test
@@ -11,20 +12,50 @@ describe 'blockquoted' do
     Sinatra::Application
   end
 
-  it 'renders a quote on the homepage' do
-    get '/'
-    last_response.should be_ok
-    last_response.body.should have_tag 'blockquote'
+  subject { last_response }
+  before { get path }
+
+  describe 'when rendering html' do
+
+    describe 'when fetching the homepage' do
+      let(:path) { '/' }
+      it { should be_ok }
+    end
+
+    describe 'when fetching a specific quote' do
+      let(:path) { '/tbwszs13' }
+      it { should be_ok }
+    end
+
+    describe 'when trying to find a nonexistant page' do
+      let(:path) { '/not_here' }
+      it { should be_not_found }
+    end
+
   end
 
-  it 'renders a specific quote' do
-    get '/tbwszs13'
-    last_response.should be_ok
-    last_response.body.should have_tag('blockquote', :text => 'If you didn\'t write it, mock it.')
-  end
+  describe 'when rendering json' do
 
-  it 'shows not found for anything else' do
-    get '/not_here'
-    puts last_response.should be_not_found
+    describe 'when fetching a random quote' do
+      let(:path) { '/random' }
+      it { should be_ok }
+
+      describe 'when inspecting response body' do
+        subject { JSON.parse(last_response.body) }
+        it { should have_key 'copy' }
+      end
+
+    end
+
+    describe 'when rendering a specific quote' do
+      let(:path) { '/quote/tbwszs13' }
+      it { should be_ok }
+
+      describe 'when inspecting response body' do
+        subject { JSON.parse(last_response.body) }
+        it { should have_key 'copy' }
+      end
+    end
+
   end
 end

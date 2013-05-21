@@ -1,17 +1,35 @@
-%blockquote
-  %p#quote= quote.copy
-  %footer
-    - if quote.has_citation?
-      %p#citation
-        - if quote.has_citation_url?
-          %em
-            %a{:href => quote.citation_url}= quote.citation_text
-        - else
-          %em= quote.citation_text
-    %ul.footer-links
-      %li>
-        %a{:href => "/#{quote.hash_string}"} Link to this quote
-      %li>
-        %a{href:'https://github.com/adscott/blockquoted'} Contribute
-      %li>
-        %a{href:'/'} Show me another
+%html
+  %head
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    %title Blockquoted
+    %link{rel: 'icon', href: '/favicon.png'}
+    %link{rel:'stylesheet', type:'text/css', href:'/stylesheets/css/screen.css'}
+  %body
+    %section#main
+    %script= "var slug = '#{slug}';"
+    %script{src: '/javascript/jquery-2.0.0.min.js'}
+    %script{src: '/javascript/underscore.js'}
+    %script{src: '/javascript/underscore.string.js'}
+    %script{src: '/javascript/json2.js'}
+    %script{src: '/javascript/haml.min.js'}
+    %script{src: '/javascript/loader.js'}
+    %script#quote-template{type: 'text/template'}
+      \%blockquote
+      \  %p#quote= quote.copy
+      \  %footer
+      \    - if(quote.citation_text) {
+      \      %p#citation
+      \        - if(quote.citation_url) {
+      \          %em
+      \            %a{href: quote.citation_url}= quote.citation_text
+      \        - else {
+      \          %em= quote.citation_text
+      \    %ul.footer-links
+      \      %li>
+      \        %a{href: '/' + quote.hash_string} Link to this quote
+      \      %li>
+      \        %a{href:'https://github.com/adscott/blockquoted'} Contribute
+      \      %li>
+      \        %a{href:'/'} Show me another
+
