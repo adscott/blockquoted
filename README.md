@@ -5,9 +5,6 @@ Source for http://blockquoted.com - a repository of software development one lin
 
 ## Setup
 
-This uses a lightweight sinatra wrapper, haml-server. https://github.com/bernerdschaefer/haml-server
-
-
 Install the bundle
 
 $`bundle install`
