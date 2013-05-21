@@ -1,23 +1,30 @@
 class Quote
 
-  attr_reader :copy, :author, :url
+  attr_reader :copy, :author, :citation_url, :citation_text
 
   def initialize(attrs)
     @copy = attrs[:copy] || ''
     @author = attrs[:author] || ''
-    @url = attrs[:url] || ''
+    @citation_url = attrs[:citation_url] || ''
+    @citation_text = attrs[:citation_text] || generate_citation_text
   end
 
-  def has_author?
-    author.length > 0
+  def has_citation?
+    citation_text.length > 0
   end
 
-  def has_link?
-    url.length > 0
+  def has_citation_url?
+    citation_url.length > 0
   end
 
-  def link_text
-    uri = URI(url)
+  def hash_string
+    Digest::SHA1.hexdigest(copy + citation_text + citation_url).hex.to_s(36)[0..7]
+  end
+
+  private
+  def generate_citation_text
+    return '' unless has_citation_url?
+    uri = URI(citation_url)
     host = uri.host
     path_chunks = uri.path.split('/')
     path = path_chunks.length > 2 ? "/.../#{path_chunks.last}" : uri.path
@@ -25,10 +32,6 @@ class Quote
     fragment = uri.fragment.nil? ? '' : "##{uri.fragment}"
     long_url = path == '/' && query == '' && fragment == '' ? host : "#{host}#{path}#{query}#{fragment}"
     long_url.length > 50 ? "#{long_url[0..46]}..." : long_url
-  end
-
-  def hash_string
-    Digest::SHA1.hexdigest(copy + author + url).hex.to_s(36)[0..7]
   end
 
 end

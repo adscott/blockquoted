@@ -1,13 +1,13 @@
 %blockquote
   %p#quote= quote.copy
   %footer
-    - if quote.has_author?
+    - if quote.has_citation?
       %p#citation
-        %span
-          %em #{quote.author}
-    - if quote.has_link?
-      %p
-        %a{:href => quote.url}= quote.link_text
+        - if quote.has_citation_url?
+          %em
+            %a{:href => quote.citation_url}= quote.citation_text
+        - else
+          %em= quote.citation_text
     %ul.footer-links
       %li>
         %a{:href => "/#{quote.hash_string}"}= 'Link to this quote'

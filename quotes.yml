@@ -40,19 +40,19 @@
   copy: "Design and development are human activities, forget that and all is lost."
 -
   copy: It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.
-  author: Perlis
+  citation_text: Perlis
 -
   copy: "There are two ways to write code: write code so simple there are obviously no bugs in it, or write code so complex that there are no obvious bugs in it."
-  author: Hoare
+  citation_text: Hoare
 -
   copy: "Any sufficiently complicated [...] program contains an ad hoc, informally-specified, bug-ridden, slow implementation of half of Common Lisp."
-  author: Greenspun
+  citation_text: Greenspun
 -
   copy: "XML is like violence: if it doesn’t solve your problem, you aren’t using enough of it."
 -
   copy: The best code is the one you don't have to write.
 -
   copy: "Keep is DRY, shy, and tell the other guy."
-  url: http://media.pragprog.com/articles/may_04_oo1.pdf
+  citation_url: http://media.pragprog.com/articles/may_04_oo1.pdf
 -
   copy: Premature optimization is the root of all evil.

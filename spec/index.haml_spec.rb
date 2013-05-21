@@ -5,19 +5,17 @@ require 'hashie'
 describe 'index.haml' do
 
   let(:copy) { 'Hello World!' }
-  let(:author) { 'Brian Kernighan' }
-  let(:url) { 'https://en.wikipedia.org/wiki/Hello_world_program' }
-  let(:link_text) { 'en.wikipedia.org/.../Hello_world_program' }
+  let(:citation_text) { 'Brian Kernighan' }
+  let(:citation_url) { 'https://en.wikipedia.org/wiki/Hello_world_program' }
   let(:hash_string) { '123456' }
-  let(:has_author) { false }
-  let(:has_link) { false }
+  let(:has_citation) { false }
+  let(:has_citation_url) { false }
   let(:quote) { {
     :copy => copy,
-    :author => author,
-    :has_author? => has_author,
-    :url => url,
-    :link_text => link_text,
-    :has_link? => has_link,
+    :citation_text => citation_text,
+    :citation_url => citation_url,
+    :has_citation? => has_citation,
+    :has_citation_url? => has_citation_url,
     :hash_string => hash_string
   } }
 
@@ -29,16 +27,17 @@ describe 'index.haml' do
   end
 
   describe 'when there is an author' do
-    let(:has_author) { true }
+    let(:has_citation) { true }
 
-    it { should have_tag('blockquote') { with_tag('footer', :text => author) } }
+    it { should have_tag('blockquote') { with_tag('footer', :text => citation_text) } }
   end
 
   describe 'when there is a url' do
-    let(:has_link) { true }
+    let(:has_citation) { true }
+    let(:has_citation_url) { true }
 
     it { should have_tag('blockquote') { with_tag 'footer' } }
-    it { should have_tag('footer') { with_tag('a', :text => link_text, :with => { :href => url }) } }
+    it { should have_tag('footer') { with_tag('a', :text => citation_text, :with => { :href => citation_url }) } }
   end
 
 end
