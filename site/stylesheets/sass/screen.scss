@@ -2,7 +2,7 @@
 @import "_mixins.sass";
 @import "_solarized.scss";
 @import "_reset.scss";
-@import "_animations.scss";
+
 
 
 
@@ -86,7 +86,6 @@ blockquote {
   &:after {
     content: '”';
   }
-
 }
 
 
@@ -103,8 +102,3 @@ footer {
   line-height: 22px;
 }
 
-
-
-.fallout {
-  -webkit-animation: fallout 1s;
-}

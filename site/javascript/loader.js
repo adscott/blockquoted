@@ -31,11 +31,6 @@
 
   $('#another').click(function (e) {
     e.preventDefault();
-
-    // adam! fix me coz i sucks as t3h jerverschkerps
-    // var oldquote = ( $('#quote').text() );
-    // $('body').prepend('<div class="fallout">' + oldquote + '</div>');
-
     renderQuote(randomQuotePath);
   });
 }());
