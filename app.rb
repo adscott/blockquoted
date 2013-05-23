@@ -3,7 +3,7 @@ require 'sinatra/json'
 require 'yaml'
 require 'hashie'
 require 'json'
-require './quote'
+require './models/quote'
 
 QUOTES = YAML.load_file('quotes.yml').map { |e| Quote.new(Hashie::Mash.new(e)) }
 
@@ -11,10 +11,6 @@ def fetch_quote
   QUOTES.sample
 end
 
-template_dir = 'site'
-
-set :public_folder, template_dir
-set :views, template_dir
 set :json_encoder, JSON
 
 get '/' do

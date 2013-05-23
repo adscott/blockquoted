@@ -12,7 +12,7 @@ $`bundle install`
 
 Start sass:
 
-$`bundle exec sass --watch site/stylesheets/sass/screen.scss:site/stylesheets/css/screen.css`
+$`bundle exec sass --watch public/stylesheets/sass/screen.scss:public/stylesheets/css/screen.css`
 
 
 Start haml-server(sinatra):

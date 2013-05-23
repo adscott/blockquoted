@@ -1,4 +1,4 @@
-require './quote'
+require './models/quote'
 
 describe Quote do
 
