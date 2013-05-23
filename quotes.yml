@@ -56,3 +56,5 @@
   citation_url: http://media.pragprog.com/articles/may_04_oo1.pdf
 -
   copy: Premature optimization is the root of all evil.
+- 
+  copy: Favor immutability. Shared mutable state is really hard to hold in your head, and really hard to reason about.
