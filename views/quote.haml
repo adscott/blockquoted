@@ -24,20 +24,12 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    %script{src: '/javascript/jquery-2.0.0.min.js'}
-    %script{src: '/javascript/underscore.js'}
-    %script{src: '/javascript/underscore.string.js'}
-    %script{src: '/javascript/json2.js'}
-    %script{src: '/javascript/haml.min.js'}
-    %script{src: '/javascript/loader.js'}
-    %script#quote-template{type: 'text/template'}
-      \%blockquote
-      \  %p#quote= quote.copy
-      \  %footer
-      \    - if(quote.citation_text) {
-      \      %p#citation
-      \        - if(quote.citation_url) {
-      \          %em
-      \            %a{href: quote.citation_url}= quote.citation_text
-      \        - else {
-      \          %em= quote.citation_text
+    %script{src: '/javascripts/jquery-2.0.0.min.js'}
+    %script{src: '/javascripts/underscore.js'}
+    %script{src: '/javascripts/underscore.string.js'}
+    %script{src: '/javascripts/json2.js'}
+    %script{src: '/javascripts/haml.min.js'}
+    %script{src: '/javascripts/n.min.js'}
+    %script{src: '/javascripts/loader.js'}
+    %script{src: '/javascripts/render.js'}
+    %script{src: '/javascripts/events.js'}

@@ -1,0 +1,10 @@
+%blockquote
+  %p#quote= quote.copy
+  %footer
+    - if(quote.citation_text) {
+      %p#citation
+        - if(quote.citation_url) {
+          %em
+            %a{href: quote.citation_url}= quote.citation_text
+        - else {
+          %em= quote.citation_text

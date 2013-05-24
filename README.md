@@ -26,7 +26,7 @@ Add quotes to `quotes.yml` and make a pull request.
 
 Add tests for any new functionality. Tests can be run using:
 
-$`bundle exec rspec`
+$`bundle exec rake`
 
 ## Credits
 

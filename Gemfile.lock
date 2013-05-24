@@ -2,17 +2,28 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.3.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     diff-lcs (1.2.4)
     eventmachine (1.0.3)
+    ffi (1.8.1)
     haml (3.1.7)
     hashie (2.0.5)
+    jasmine (1.3.2)
+      jasmine-core (~> 1.3.1)
+      rack (~> 1.0)
+      rspec (>= 1.3.1)
+      selenium-webdriver (>= 0.1.3)
+    jasmine-core (1.3.1)
     json (1.8.0)
+    multi_json (1.7.3)
     nokogiri (1.5.9)
     rack (1.5.1)
     rack-protection (1.3.2)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.0.4)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -24,7 +35,13 @@ GEM
       nokogiri (>= 1.4.4)
       rspec (>= 2.0.0)
     rspec-mocks (2.13.1)
+    rubyzip (0.9.9)
     sass (3.2.5)
+    selenium-webdriver (2.32.1)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.3.4)
@@ -39,6 +56,7 @@ GEM
       sinatra (~> 1.3.0)
       tilt (~> 1.3)
     tilt (1.3.3)
+    websocket (1.0.7)
 
 PLATFORMS
   ruby
@@ -46,8 +64,10 @@ PLATFORMS
 DEPENDENCIES
   haml
   hashie
+  jasmine
   json
   rack-test
+  rake
   rspec
   rspec-html-matchers
   sass
