@@ -9,9 +9,15 @@ n('blockquoted.render', function (ns) {
   };
 
   ns.renderQuote = function(template, quote) {
-    var container = getContainer();
+    var tweet = 'http://twitter.com/intent/tweet' +
+      '?url=' + encodeURIComponent('http://blockquoted.com/' + quote.hash_string) +
+      '&text=' + encodeURIComponent(quote.copy);
+
     var compiledTemplate = haml.compileHaml({source: template});
-    container.html(compiledTemplate({quote: quote}));
+
+    var container = getContainer();
+    container.html(compiledTemplate({quote: quote, tweet: tweet}));
+
     return container.fadeIn();
   };
 

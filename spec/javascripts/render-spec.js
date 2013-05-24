@@ -9,7 +9,8 @@ describe('blockquoted.render', function () {
         context.template = data;
       }});
       context.quote = {
-        copy: 'some copy'
+        copy: 'some copy',
+        hash_string: 'qwertyui'
       };
       jasmine.getFixtures().set('<section id="main" />');
     });
@@ -53,6 +54,20 @@ describe('blockquoted.render', function () {
 
       it('should have a citation link', function () {
         expect($('#citation a')).toHaveAttr('href', context.quote.citation_url);
+      });
+    });
+
+    describe('tweet link', function () {
+      beforeEach(function () {
+        blockquoted.render.renderQuote(context.template, context.quote);
+      });
+
+      it('should have a tweet link', function () {
+        expect($('a#tweet')).toHaveAttr('href', 'http://twitter.com/intent/tweet?url=http%3A%2F%2Fblockquoted.com%2Fqwertyui&text=some%20copy');
+      });
+
+      it('should be a popup link', function () {
+        expect($('a#tweet')).toHaveClass('popup');
       });
     });
   });

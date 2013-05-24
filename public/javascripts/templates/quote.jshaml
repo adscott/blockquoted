@@ -8,3 +8,6 @@
             %a{href: quote.citation_url}= quote.citation_text
         - else {
           %em= quote.citation_text
+    %p#social
+      %a#tweet.popup{href: tweet}
+        tweet
