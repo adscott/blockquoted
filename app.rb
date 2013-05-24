@@ -3,12 +3,17 @@ require 'sinatra/json'
 require 'yaml'
 require 'hashie'
 require 'json'
+require 'sass'
 require './models/quote'
 
 QUOTES = YAML.load_file('quotes.yml').map { |e| Quote.new(Hashie::Mash.new(e)) }
 
 def fetch_quote
   QUOTES.sample
+end
+
+def find_quote(hash_string)
+  QUOTES.find { |quote| hash_string == quote.hash_string }
 end
 
 set :json_encoder, JSON
@@ -31,6 +36,6 @@ get '/:quote_hash_string' do |quote_hash_string|
   haml :quote
 end
 
-def find_quote(hash_string)
-  QUOTES.find { |quote| hash_string == quote.hash_string }
+get '/stylesheets/:stylesheet.css' do |stylesheet|
+  scss :"stylesheets/#{stylesheet}"
 end
