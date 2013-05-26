@@ -8,6 +8,7 @@
 
 $gutter-horizontal: 1em;
 $gutter-vertical: 10px;
+$control-link: lighten($comments, 15);
 
 
 
@@ -43,7 +44,7 @@ a {
   text-transform: lowercase;
 
   a {
-    color: lighten($comments, 15);
+    color: $control-link;
   }
 
   &:first-of-type {
@@ -94,6 +95,25 @@ blockquote {
   content: "-";
 }
 
+
+#social {
+
+  $height: 24px;
+
+  padding-top: 6em;
+
+  img {
+    display: inline-block;
+    height: $height;
+    vertical-align: bottom;
+  }
+
+  a {
+    color: $control-link;
+    font-size: 16px;
+    line-height: $height;
+  }
+}
 
 
 footer {

@@ -9,5 +9,6 @@
         - else {
           %em= quote.citation_text
     %p#social
+      %img{src: '/images/twitter.png', alt: 'Twitter'}
       %a#tweet.popup{href: tweet}
         tweet
