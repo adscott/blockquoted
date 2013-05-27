@@ -108,16 +108,24 @@ blockquote {
 
   padding-top: 6em;
 
-  img {
-    display: inline-block;
-    height: $height;
-    vertical-align: bottom;
-  }
+  margin-bottom: $gutter-vertical;
 
   a {
     color: $control-link;
     font-size: 16px;
     line-height: $height;
+  }
+
+  #tweet {
+    &:before {
+      display: inline-block;
+      background: url('/images/twitter.png') center center no-repeat;
+      background-size: contain;
+      height: $height;
+      width: $height;
+      content: '';
+      vertical-align: bottom;
+    }
   }
 }
 
