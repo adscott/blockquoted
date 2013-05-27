@@ -42,13 +42,19 @@ a {
   padding: 0 $gutter-horizontal/2;
   margin: $gutter-vertical 0 0;
   text-transform: lowercase;
+  width: 50%;
 
   a {
     color: $control-link;
   }
 
   &:first-of-type {
+    text-align: right;
     border-right: 1px $bghlights solid;
+  }
+
+  &:last-of-type {
+    text-align: left;
   }
 }
 
