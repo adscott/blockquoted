@@ -58,3 +58,5 @@
   copy: Premature optimization is the root of all evil.
 - 
   copy: Favor immutability. Shared mutable state is really hard to hold in your head, and really hard to reason about.
+-
+  copy: Comments in your code are lies waiting to happen.
