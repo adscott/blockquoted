@@ -3,8 +3,8 @@
     %meta(charset="UTF-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
     %title Blockquoted
-    %link{rel: 'icon', href: '/favicon.png'}
-    %link{rel: 'stylesheet', type: 'text/css', href: '/stylesheets/screen.css'}
+    %link{rel: 'icon', href: versioned_static('/favicon.png')}
+    %link{rel: 'stylesheet', type: 'text/css', href: versioned_stylesheet('screen')}
   %body
     %section#controls
       %ul
@@ -24,12 +24,12 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    %script{src: '/javascripts/jquery-2.0.0.min.js'}
-    %script{src: '/javascripts/underscore.js'}
-    %script{src: '/javascripts/underscore.string.js'}
-    %script{src: '/javascripts/json2.js'}
-    %script{src: '/javascripts/haml.min.js'}
-    %script{src: '/javascripts/n.min.js'}
-    %script{src: '/javascripts/loader.js'}
-    %script{src: '/javascripts/render.js'}
-    %script{src: '/javascripts/events.js'}
+    %script{src: versioned_javascript('jquery-2.0.0.min')}
+    %script{src: versioned_javascript('underscore')}
+    %script{src: versioned_javascript('underscore.string')}
+    %script{src: versioned_javascript('json2')}
+    %script{src: versioned_javascript('haml.min')}
+    %script{src: versioned_javascript('n.min')}
+    %script{src: versioned_javascript('loader')}
+    %script{src: versioned_javascript('render')}
+    %script{src: versioned_javascript('events')}
