@@ -47,7 +47,7 @@ end
 
 helpers do
   def versioned_static(path)
-    "#{path}?#{File.mtime(File.join(Sinatra::Application.public_folder, path))}"
+    "#{path}?#{File.mtime(File.join(Sinatra::Application.public_folder, path)).to_i.to_s}"
   end
 
   def versioned_stylesheet(stylesheet)
