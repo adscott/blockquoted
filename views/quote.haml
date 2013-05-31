@@ -33,3 +33,7 @@
     %script{src: versioned_javascript('loader')}
     %script{src: versioned_javascript('render')}
     %script{src: versioned_javascript('events')}
+    :javascript
+      n('blockquoted.configuration', function (ns) {
+        ns.templatePath = "#{versioned_static('/javascripts/templates/quote.jshaml')}";
+      });

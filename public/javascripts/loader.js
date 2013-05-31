@@ -1,6 +1,5 @@
 n('blockquoted.loader', function (ns) {
   var randomQuotePath = '/random';
-  var templatePath = '/javascripts/templates/quote.jshaml';
 
   function getSlug() {
     return getCurrentPath() === '/' ? randomQuotePath : '/quote' + getCurrentPath();
@@ -25,7 +24,7 @@ n('blockquoted.loader', function (ns) {
 
     return $.when(
       blockquoted.render.hideQuote(),
-      $.get(templatePath),
+      $.get(blockquoted.configuration.templatePath),
       $.get(slug)
     ).done(function (fadeRespone, templateResponse, quoteResponse) {
         blockquoted.render.renderQuote(templateResponse[0], quoteResponse[0]);

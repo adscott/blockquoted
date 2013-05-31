@@ -21,6 +21,7 @@ def far_future
 end
 
 set :json_encoder, JSON
+set :static_cache_control, [:public, :must_revalidate, :max_age => far_future]
 
 get '/' do
   haml :quote
