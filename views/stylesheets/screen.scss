@@ -5,11 +5,10 @@
 
 
 
-
+$mobile-break: 599px;
 $gutter-horizontal: 1em;
 $gutter-vertical: 10px;
 $control-link: lighten($comments, 15);
-
 
 
 html {
@@ -136,3 +135,19 @@ footer {
   line-height: 22px;
 }
 
+
+
+@media only screen and (max-width: $mobile-break)  {
+  #main {
+    padding-top: $gutter-vertical;
+    padding-bottom: $gutter-vertical;
+  }
+
+  #quote {
+    $size: 1.5em;
+    font-size: $size;
+    line-height: $size*1.1;
+  }
+
+  #social { padding-top: $gutter-vertical*2; }
+}
