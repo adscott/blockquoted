@@ -1,4 +1,5 @@
 n('blockquoted.render', function (ns) {
+  'use strict';
 
   function getContainer() {
     return $('#main');
@@ -11,11 +12,12 @@ n('blockquoted.render', function (ns) {
   ns.renderQuote = function(template, quote) {
     var tweet = 'http://twitter.com/intent/tweet' +
       '?url=' + encodeURIComponent('http://blockquoted.com/' + quote.hash_string) +
-      '&text=' + encodeURIComponent(quote.copy);
+      '&text=' + encodeURIComponent(quote.copy),
 
-    var compiledTemplate = haml.compileHaml({source: template});
+      compiledTemplate = haml.compileHaml({source: template}),
 
-    var container = getContainer();
+      container = getContainer();
+
     container.html(compiledTemplate({quote: quote, tweet: tweet}));
 
     return container.fadeIn();

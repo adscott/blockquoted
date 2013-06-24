@@ -1,4 +1,17 @@
 describe('blockquoted.render', function () {
+  'use strict';
+
+  function sharedCopyExample(context) {
+    it('should display copy', function () {
+      expect($('#quote')).toHaveText(context.quote.copy);
+    });
+  }
+
+  function sharedCitationTextExample(context) {
+    it('should have plain citaion text', function () {
+      expect($('#citation')).toHaveText(context.quote.citation_text);
+    });
+  }
 
   describe('examples', function () {
 
@@ -71,17 +84,5 @@ describe('blockquoted.render', function () {
       });
     });
   });
-
-  function sharedCopyExample(context) {
-    it('should display copy', function () {
-      expect($('#quote')).toHaveText(context.quote.copy);
-    });
-  }
-
-  function sharedCitationTextExample(context) {
-    it('should have plain citaion text', function () {
-      expect($('#citation')).toHaveText(context.quote.citation_text);
-    });
-  }
 
 });

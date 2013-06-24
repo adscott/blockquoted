@@ -1,12 +1,13 @@
 n('blockquoted.loader', function (ns) {
+  'use strict';
   var randomQuotePath = '/random';
-
-  function getSlug() {
-    return getCurrentPath() === '/' ? randomQuotePath : '/quote' + getCurrentPath();
-  }
 
   function getCurrentPath() {
     return window.location.pathname;
+  }
+
+  function getSlug() {
+    return getCurrentPath() === '/' ? randomQuotePath : '/quote' + getCurrentPath();
   }
 
   function updateCurrentPath(path) {

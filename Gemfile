@@ -13,6 +13,7 @@ group :test do
   gem 'rack-test'
   gem 'json'
   gem 'jasmine'
+  gem 'jslint'
 end
 
 group :development do

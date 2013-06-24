@@ -1,4 +1,6 @@
 (function () {
+  'use strict';
+
   $(window).bind('popstate', function() {
     blockquoted.loader.displayQuote();
   });
