@@ -56,7 +56,10 @@
   citation_url: http://media.pragprog.com/articles/may_04_oo1.pdf
 -
   copy: Premature optimization is the root of all evil.
-- 
+-
   copy: Favor immutability. Shared mutable state is really hard to hold in your head, and really hard to reason about.
 -
   copy: Comments in your code are lies waiting to happen.
+-
+  copy: Almost always the programmer's time will be more important than the computer's. By programmer I mean mostly the people who read the code, and not the one(s) who wrote it.
+  citation_text: Charles Haynes
